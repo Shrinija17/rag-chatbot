@@ -10,6 +10,13 @@ from langchain_classic.chains import RetrievalQA
 
 load_dotenv()
 
+# Load secrets from Streamlit Cloud if available
+if "ANTHROPIC_API_KEY" not in os.environ:
+    try:
+        os.environ["ANTHROPIC_API_KEY"] = st.secrets["ANTHROPIC_API_KEY"]
+    except Exception:
+        pass
+
 # ============ Page Config ============
 
 st.set_page_config(
