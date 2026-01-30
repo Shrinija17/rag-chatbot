@@ -1,0 +1,35 @@
+RAG (Retrieval-Augmented Generation) Tutorial
+
+What is RAG?
+RAG stands for Retrieval-Augmented Generation. It's a technique that combines information retrieval with text generation. Instead of relying solely on what a language model learned during training, RAG first retrieves relevant information from a knowledge base, then uses that information to generate accurate answers.
+
+Why use RAG?
+1. Accuracy: RAG reduces hallucinations by grounding responses in actual documents.
+2. Up-to-date information: You can update the knowledge base without retraining the model.
+3. Source attribution: You can show users where the information came from.
+4. Privacy: Your documents stay on your own system.
+
+How does RAG work?
+Step 1: Document Loading - Load your documents (PDFs, text files, etc.)
+Step 2: Chunking - Split documents into smaller pieces (chunks)
+Step 3: Embedding - Convert chunks into vectors (numbers that represent meaning)
+Step 4: Storage - Store vectors in a vector database
+Step 5: Retrieval - When a user asks a question, find the most similar chunks
+Step 6: Generation - Send the question + relevant chunks to an LLM to generate an answer
+
+Key Components:
+- Embeddings: Mathematical representations of text that capture semantic meaning
+- Vector Database: A database optimized for storing and searching embeddings
+- LLM: The language model that generates the final answer
+
+Common Vector Databases:
+- Chroma (simple, good for learning)
+- Pinecone (cloud-hosted, scalable)
+- Weaviate (open source, feature-rich)
+- FAISS (by Facebook, very fast)
+
+Tips for Better RAG:
+1. Chunk size matters: Too small = missing context, too large = irrelevant info
+2. Overlap helps: Overlapping chunks prevent losing context at boundaries
+3. Clean your data: Better input = better output
+4. Test different k values: k is the number of chunks retrieved
