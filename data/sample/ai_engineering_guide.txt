@@ -1,0 +1,75 @@
+AI Engineering: A Comprehensive Guide
+
+What is AI Engineering?
+AI Engineering is the discipline of building, deploying, and maintaining AI-powered systems in production. Unlike research-focused roles, AI engineers focus on practical applications — turning models into products that real users interact with.
+
+Key Responsibilities:
+- Design and implement AI/ML pipelines for production workloads
+- Build and optimize LLM-based applications (chatbots, agents, RAG systems)
+- Manage data pipelines for model training and inference
+- Deploy models using cloud infrastructure (AWS, GCP, Azure)
+- Monitor model performance, handle drift, and implement feedback loops
+- Collaborate with product, engineering, and data teams
+
+Core Technologies:
+1. Programming: Python, Java, SQL
+2. ML Frameworks: PyTorch, TensorFlow, scikit-learn
+3. LLM Tools: LangChain, LlamaIndex, HuggingFace Transformers
+4. Vector Databases: ChromaDB, Pinecone, Weaviate, FAISS
+5. Cloud: AWS (SageMaker, Bedrock), GCP (Vertex AI), Azure (OpenAI Service)
+6. MLOps: Docker, Kubernetes, MLflow, Weights & Biases
+
+What is Retrieval-Augmented Generation (RAG)?
+RAG is an architecture pattern that enhances LLM responses by retrieving relevant context from external knowledge bases before generating answers. This reduces hallucinations and allows the model to answer questions about private or up-to-date information.
+
+RAG Pipeline Steps:
+1. Document Ingestion: Load documents (PDF, text, web pages)
+2. Chunking: Split documents into manageable pieces (typically 500-1500 characters)
+3. Embedding: Convert text chunks into vector representations using embedding models
+4. Indexing: Store vectors in a vector database for efficient similarity search
+5. Retrieval: When a user asks a question, find the most semantically similar chunks
+6. Augmented Generation: Pass retrieved chunks + user question to an LLM for answer generation
+
+Embedding Models:
+- all-MiniLM-L6-v2: Lightweight, fast, good for general use (384 dimensions)
+- text-embedding-3-small (OpenAI): High quality, cloud-hosted
+- BGE models (BAAI): Open source, competitive with commercial options
+- Cohere Embed: Good multilingual support
+
+Vector Databases Comparison:
+- ChromaDB: Simple, great for prototyping, runs locally
+- Pinecone: Managed service, scalable, good for production
+- Weaviate: Open source, supports hybrid search (vector + keyword)
+- FAISS: Facebook's library, extremely fast, but requires more setup
+- Qdrant: Rust-based, high performance, good filtering support
+
+Best Practices for RAG Systems:
+1. Chunk size matters: Too small loses context, too large adds noise. Test 500-1500 chars.
+2. Overlap chunks: 10-20% overlap prevents losing context at boundaries.
+3. Metadata filtering: Store metadata (source, page, date) for better retrieval.
+4. Hybrid search: Combine vector similarity with keyword search for better results.
+5. Reranking: Use a reranker model to improve retrieval quality after initial search.
+6. Evaluation: Measure retrieval accuracy, answer relevance, and faithfulness.
+
+LLM Selection for RAG:
+- Claude (Anthropic): Excellent for long context, nuanced answers, and safety
+- GPT-4 (OpenAI): Strong general performance, good tool use
+- Llama 3 (Meta): Open source, can run locally, good for privacy-sensitive use cases
+- Mistral: Open source, efficient, good cost-performance ratio
+
+Production Considerations:
+- Latency: Embedding + retrieval + generation can add up. Cache when possible.
+- Cost: LLM API calls are the main cost driver. Use smaller models for simple queries.
+- Security: Never expose API keys. Use environment variables or secret managers.
+- Scalability: Use async processing for multiple concurrent users.
+- Monitoring: Track query patterns, retrieval quality, and user satisfaction.
+
+Career Path in AI Engineering:
+Junior AI Engineer → AI Engineer → Senior AI Engineer → Staff AI Engineer → Principal AI Engineer
+
+Key skills that differentiate candidates:
+- End-to-end project experience (not just notebooks)
+- Production deployment knowledge (Docker, CI/CD, cloud)
+- Understanding of system design and scalability
+- Strong software engineering fundamentals
+- Ability to communicate technical concepts to non-technical stakeholders
